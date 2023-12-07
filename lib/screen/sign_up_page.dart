@@ -103,7 +103,7 @@ class SignUp extends StatelessWidget {
                       style: const TextStyle(
                         color: Colors.white,
                       ),
-                      keyboardType: TextInputType.phone,
+                      keyboardType: TextInputType.visiblePassword,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: _buildInputDecoration("Password", Icons.lock),
                       validator: _validatePassword,

@@ -16,7 +16,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF252634),
-        
+        elevation: 5,
         actions: [
           TextButton(
             child: const Text(
