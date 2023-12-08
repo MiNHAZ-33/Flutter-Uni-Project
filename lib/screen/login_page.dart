@@ -32,7 +32,6 @@ class _LoginViewState extends State<LoginView> {
     if (value!.isEmpty) {
       return 'Please enter a password';
     }
-
     return null;
   }
 
@@ -40,9 +39,9 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF202038),
+          backgroundColor: const Color(0xFF202038),
           elevation: 05,
-          title: Text('LogIn Page'),
+          title: const Text('LogIn Page'),
         ),
         resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xFF252634),
@@ -57,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   const SizedBox(
                     child: Text(
-                      "Welcome Login !",
+                      "Welcome !",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
@@ -68,11 +67,11 @@ class _LoginViewState extends State<LoginView> {
                   const SizedBox(
                     height: 10.0,
                   ),
-                  const Text(
+                  Text(
                     "Login to continue",
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.white,
+                      color: Colors.white.withOpacity(0.8),
                     ),
                   ),
                   const SizedBox(
@@ -158,7 +157,7 @@ class _LoginViewState extends State<LoginView> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignUp()));
+                                  builder: (context) => const SignUp()));
                         },
                         child: const Text(
                           " SignUp",

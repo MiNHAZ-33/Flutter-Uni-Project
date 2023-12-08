@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project/screen/login_page.dart';
+import 'package:project/screen/timer.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -35,38 +36,54 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       resizeToAvoidBottomInset: false,
       body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
+        padding: const EdgeInsets.all(20.0),
+        child: ListView(
           children: [
-            const SizedBox(height: 40),
+            Image.asset('assets/images/daffodil.png', height: 100, width: 100),
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                        offset: const Offset(0, 5),
+                        color: Colors.deepOrange.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 10)
+                  ]),
+              child: const Text(
+                'Personal Information',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  // fontFamily: 'Montserrat',
+                  // fontStyle: FontStyle.italic')
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
             const CircleAvatar(
               radius: 70,
-              backgroundImage: AssetImage('assets/images/image1.jpg'),
+              backgroundImage: AssetImage('assets/images/profile.jpg'),
             ),
             const SizedBox(height: 20),
-            itemProfile('Name', 'Md. Lokman Hossen', CupertinoIcons.person),
+            itemProfile('Name', 'Mariam Binta Mim', CupertinoIcons.person),
             const SizedBox(height: 20),
-            itemProfile('Student ID', '1 8 0 1 0 5', CupertinoIcons.person),
+            itemProfile('Student ID', ' 203-51-028', CupertinoIcons.person),
             const SizedBox(height: 10),
-            itemProfile('Department', 'CSE', CupertinoIcons.phone),
+            itemProfile('Department', 'ITM', CupertinoIcons.phone),
             const SizedBox(height: 10),
-            itemProfile('Blood Group', 'AB(+ve)', CupertinoIcons.mail),
+            itemProfile('Blood Group', 'B+', CupertinoIcons.mail),
+            const SizedBox(height: 10),
+            itemProfile('Course Title', 'Mobile Application Development',
+                CupertinoIcons.mail),
             const SizedBox(
               height: 20,
             ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.all(15),
-                ),
-                child: const Text(
-                  'User Track',
-                  style: TextStyle(fontSize: 18),
-                ),
-              ),
-            )
+            const TimerWidget(),
           ],
         ),
       ),
