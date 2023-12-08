@@ -25,8 +25,8 @@ class DefaultFirebaseOptions {
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
-      case TargetPlatform.iOS:
-        return ios;
+      // case TargetPlatform.iOS:
+      //   return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAzPhNXfOzNW8ODcuP9Qlui4xEauAYd9BM',
-    appId: '1:212134197269:android:001bd11682dee7cef9361c',
+    apiKey: 'AIzaSyBS4tsS9dKgWPLpUfUJE67zTqdKQapZkl0',
+    appId: '1:164429280471:android:937e3bcdff911c8f97ac92',
     messagingSenderId: '212134197269',
-    projectId: 'project-f0c09',
-    storageBucket: 'project-f0c09.appspot.com',
+    projectId: 'my-project-b3eec',
+    storageBucket: 'my-project-b3eec.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCg9I_OmrrQ58HIJG5cFD5FH9lP4jw5rtM',
-    appId: '1:212134197269:ios:a11fc5a8becdbee7f9361c',
-    messagingSenderId: '212134197269',
-    projectId: 'project-f0c09',
-    storageBucket: 'project-f0c09.appspot.com',
-    iosBundleId: 'com.example.project',
-  );
+  // static const FirebaseOptions ios = FirebaseOptions(
+  //   apiKey: 'AIzaSyCg9I_OmrrQ58HIJG5cFD5FH9lP4jw5rtM',
+  //   appId: '1:212134197269:ios:a11fc5a8becdbee7f9361c',
+  //   messagingSenderId: '212134197269',
+  //   projectId: 'project-f0c09',
+  //   storageBucket: 'project-f0c09.appspot.com',
+  //   iosBundleId: 'com.example.project',
+  // );
 }

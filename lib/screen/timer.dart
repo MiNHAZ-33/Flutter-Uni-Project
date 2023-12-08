@@ -43,26 +43,24 @@ class _TimerWidgetState extends State<TimerWidget> {
     final hours = _start ~/ 3600;
     final minutes = (_start % 3600) ~/ 60;
     final seconds = _start % 60;
-    return Expanded(
-      child: Column(
-        children: <Widget>[
-          const SizedBox(height: 10),
-          GestureDetector(
-            onTap: startOrPauseTimer,
-            child: Text(
-                'Time Spent on Campus: ${hours} h ${minutes} m ${seconds} s',
-                style: const TextStyle(fontSize: 16)),
+    return Column(
+      children: <Widget>[
+        const SizedBox(height: 10),
+        GestureDetector(
+          onTap: startOrPauseTimer,
+          child: Text(
+              'Time Spent on Campus: ${hours} h ${minutes} m ${seconds} s',
+              style: const TextStyle(fontSize: 16)),
+        ),
+        const SizedBox(height: 10),
+        ElevatedButton(
+          onPressed: startOrPauseTimer,
+          child: Text(
+            _isRunning ? 'Stop Timer' : 'Start Timer',
+            style: const TextStyle(fontSize: 18),
           ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: startOrPauseTimer,
-            child: Text(
-              _isRunning ? 'Stop Timer' : 'Start Timer',
-              style: const TextStyle(fontSize: 18),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

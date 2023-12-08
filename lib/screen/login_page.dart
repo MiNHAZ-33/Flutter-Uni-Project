@@ -133,8 +133,12 @@ class _LoginViewState extends State<LoginView> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const ProfilePage()));
-                        }).onError((error, stackTrace) {
-                          print("Error${error.toString()}");
+                        }).catchError((error) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Error: ${error.message}'),
+                            ),
+                          );
                         });
                       },
                     ),
